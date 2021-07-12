@@ -25,17 +25,20 @@ export function TaskList() {
     }
   }
   function handleToggleTaskCompletion(id: number) {
-    setTasks(tasks.map((element) => {
+    const alteredArrTask = tasks.map((element) => {
       if (element.id === id) {
         element.isComplete = element.isComplete ? false : true;
         return element
       }
       return element
-    }))
+    });
+
+    setTasks(alteredArrTask)
   }
 
   function handleRemoveTask(id: number) {
-    setTasks(tasks.filter((element) => (id !== element.id)))
+    const newArrTask = tasks.filter((element) => (id !== element.id))
+    setTasks(newArrTask)
   }
 
   return (
